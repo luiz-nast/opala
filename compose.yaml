@@ -1,0 +1,14 @@
+name: opala
+services:
+  service1:
+    build:
+      dockerfile: code_server.dockerfile
+    user: "0:0"
+    ports: ["127.0.0.1:8080:8080"]
+    env_file: .env
+    volumes:
+      - ./config:/root/.config
+      - ./project:/root/project
+      - ./data:/root/.local/share/code-server
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /etc/caddy/Caddyfile:/root/Caddyfile
