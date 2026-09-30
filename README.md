@@ -48,8 +48,8 @@ O `opala` é o container de **code-server** (VS Code web) de onde eu edito e sub
 ├── compose.yaml            # o serviço code-server
 ├── code_server.dockerfile  # code-server + docker CLI dentro
 ├── .env                    # PASSWORD do code-server (fora do git; ver .env.example)
-├── config/                 # ~/.config do code-server (gerado, fora do git)
-├── data/                   # estado do code-server: extensões, logs (fora do git)
+├── config/                 # ~/.config do code-server (só tem o config.yaml com senha: fora do git)
+├── data/                   # estado do code-server; no git só vão settings.json e as listas de extensões
 └── project/                # um diretório por projeto (fora deste repo)
 ```
 
@@ -117,9 +117,11 @@ service docker start
 git clone https://github.com/luiz-nast/opala.git /root/opala
 cd /root/opala
 cp .env.example .env     # defina a senha do code-server
-mkdir -p project config data
+mkdir -p project config
 docker compose up -d --build
 ```
+
+As extensões listadas em `data/extensions/extensions.json` precisam ser reinstaladas pelo próprio code-server (o arquivo diz quais eram).
 
 **3. Caddy:** copie o Caddyfile acima para `/etc/caddy/Caddyfile`, depois:
 

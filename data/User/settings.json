@@ -1,0 +1,14 @@
+{
+  "vim.handleKeys": { "<C-j>": false, "<C-p>": false },
+  "vim.visualModeKeyBindingsNonRecursive": [{ "before": ["Y"], "after": ["\"", "+", "y"] }],
+  "vim.normalModeKeyBindingsNonRecursive": [{ "before": ["P"], "after": ["\"", "+", "p"] }],
+  "editor.lineNumbers": "relative",
+  "editor.wordWrap": "on",
+  "workbench.colorTheme": "Dark 2026",
+  "editor.tab"
+  "editor.autoIndent": "keep",
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "html.autoCreateQuotes": false
+}

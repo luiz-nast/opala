@@ -1,4 +1,14 @@
 .env
-data/
-config/
 project/
+# config/ só tem o config.yaml com senha
+config/
+# do data/ só vão as preferências do editor e a lista de extensões
+data/*
+!data/User/
+data/User/*
+!data/User/settings.json
+!data/User/keybindings.json
+!data/User/extensions.json
+!data/extensions/
+data/extensions/*
+!data/extensions/extensions.json
